@@ -34,7 +34,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.net.wimax.WimaxHelper;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -108,9 +107,6 @@ public class ProfileConfig extends SettingsPreferenceFragment
             if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_GSM) {
                 mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_2G3G, getString(R.string.toggle2g3g), R.array.profile_networkmode_entries));
             }
-        }
-        if (WimaxHelper.isWimaxSupported(getActivity())) {
-            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
         }
         if (deviceSupportsNfc(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_NFC, getString(R.string.toggleNfc)));

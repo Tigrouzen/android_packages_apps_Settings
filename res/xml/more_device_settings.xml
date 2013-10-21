@@ -61,5 +61,60 @@
             android:defaultValue="false" />
 
     </PreferenceCategory>
+	<PreferenceCategory
+                android:title="@string/category_tvout_title"
+                android:key="category_tvout">
+		<CheckBoxPreference
+			android:key="tvout_enable"
+			android:title="@string/tvout_enable_head"
+			android:summaryOn="@string/tvout_enable_summary_on"
+			android:summaryOff="@string/tvout_enable_summary_nocable"
+			android:persistent="false"
+			android:enabled="false" />
+		<ListPreference
+			android:key="tvout_system"
+			android:title="@string/tvout_system_head"
+			android:summary="@string/tvout_system_summary"
+			android:entries="@array/tvout_system_entries"
+			android:entryValues="@array/tvout_system_entries_values"
+			android:defaultValue="2" />
+	</PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/category_volume_boost_title"
+            android:key="category_volume_boost">
+                <!-- Volume Boost -->
+                <com.android.settings.device.VolumeBoostPreference
+                android:key="volume_boost"
+                android:title="@string/volume_boost_title_head"
+                android:summary="@string/volume_boost_summary_head" />
+	</PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/category_dock_audio_title"
+            android:key="category_dock_audio">
+            <!-- Dock Audio -->
+            <CheckBoxPreference
+                android:key="cardock_audio"
+                android:title="@string/cardock_audio_title_head"
+                android:summaryOn="@string/cardock_audio_summary_on"
+                android:summaryOff="@string/cardock_audio_summary_off"
+                android:persistent="true" />
+            <CheckBoxPreference
+                android:key="deskdock_audio"
+                android:title="@string/deskdock_audio_title_head"
+                android:summaryOn="@string/deskdock_audio_summary_on"
+                android:summaryOff="@string/deskdock_audio_summary_off"
+                android:persistent="true" />
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/category_vibration_title">
+            <!-- Vibration -->
+            <com.android.settings.device.VibrationPreference
+                android:key="vibration"
+                android:title="@string/vibration_title_head"
+                android:summary="@string/vibration_summary_head" />
+         </PreferenceCategory>
 
 </PreferenceScreen>
